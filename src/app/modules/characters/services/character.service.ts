@@ -11,7 +11,7 @@ export class CharacterService {
 
   constructor(private http: HttpClient) {}
 
-  // getCharacters$(): Observable<any> {
-  //   return this.http.get(this.URL);
-  // }
+  getCharacters$(): Observable<any> {
+    return this.http.get(this.URL);
+  }
 }
