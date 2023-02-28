@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterModel } from '@core/models/character.model';
-import { take } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { CharacterService } from '../services/character.service';
+// import { Store } from '@ngrx/store';
+// import { getFavoritesStateData } from '../../store/selectors/favorites.selectors';
 
 @Component({
   selector: 'app-characters-page',
@@ -10,8 +12,14 @@ import { CharacterService } from '../services/character.service';
 })
 export class CharactersPageComponent implements OnInit {
   characters: CharacterModel[] = [];
+  // characterFavorite$!: Observable<boolean>;
 
-  constructor(private characterSvc: CharacterService) {}
+  constructor(
+    private characterSvc: CharacterService
+  ) // private store: Store<CharacterModel>
+  {
+    // this.characterFavorite$ = this.store.select(getFavoritesStateData);
+  }
 
   ngOnInit(): void {
     this.getCharactersByQuery();
