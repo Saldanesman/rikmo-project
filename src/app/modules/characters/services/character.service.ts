@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { catchError, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CharacterModel } from '../../../core/models/character.model';
 
 @Injectable({
@@ -17,6 +17,6 @@ export class CharacterService {
   }
 
   getDetails$(id: number) {
-    return this.http.get<CharacterModel>(`${URL}/${id}`);
+    return this.http.get<CharacterModel>(`${this.URL}/${id}`);
   }
 }

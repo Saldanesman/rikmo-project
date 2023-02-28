@@ -1,8 +1,17 @@
-<div class="row justify-content-center mt-3" *ngIf="character$ | async as character">
-  <div class="col-xs-12 col-sm-6 col-md-6 justify-content-center">
-      {{character$}}
+<div class="character-details" *ngIf="character">
+  <div class="character-details__info">
+    <div class="character-details__info__left">
+      <h1>{{character.name}}</h1>
+      <img [src]="character.image" [alt]="character.name" />
+    </div>
+    <div class="character-details__info__right">
+      <p>Specie: {{character.species}}</p>
+      <p>Gender: {{character.gender}}</p>
+      <p>Status: {{character.status}}</p>
+    </div>
   </div>
+  <button (click)="onGoBack()" class="character-details__back">
+    Back
+  </button>
 </div>
-<button (click)="onGoBack()" class="btn btn-primary btn-lg mt-3">
-  Back
-</button>
+

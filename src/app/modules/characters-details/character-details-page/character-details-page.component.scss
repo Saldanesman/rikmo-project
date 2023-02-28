@@ -1,0 +1,49 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+@import "../../../../styles/base/typography";
+
+.character-details {
+  @include margin(15);
+
+  &__info {
+    @include marginBottom(10);
+    display: flex;
+
+    &__left {
+      width: 25%;
+
+      h1 {
+        font-size: 2.5em;
+        color: $primary-deep-purple;
+      }
+
+      img {
+        @include marginLeft(2.5);
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: auto;
+
+      p {
+        font-size: 1.25em;
+      }
+    }
+  }
+
+  &__back {
+    @include paddingTop(2.5);
+    @include paddingBottom(2.5);
+    @include paddingLeft(15);
+    @include paddingRight(15);
+    background-color: $sea-blue;
+    color: $white;
+    border: none;
+    border-radius: 10px;
+    width: 15%;
+    cursor: pointer;
+  }
+}

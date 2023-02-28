@@ -12,7 +12,16 @@ import { CharacterModel } from '../../../core/models/character.model';
   styleUrls: ['./character-details-page.component.scss'],
 })
 export class CharacterDetailsPageComponent implements OnInit {
-  character$!: Observable<CharacterModel>;
+  character: CharacterModel = {
+    id: 0,
+    name: '',
+    image: '',
+    species: '',
+    gender: '',
+    created: '',
+    status: '',
+  };
+
   constructor(
     private route: ActivatedRoute,
     private characterSvc: CharacterService,
@@ -22,7 +31,9 @@ export class CharacterDetailsPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.pipe(take(1)).subscribe((params) => {
       const id = params['id'];
-      this.character$ = this.characterSvc.getDetails$(id);
+      this.characterSvc.getDetails$(id).subscribe((res: any) => {
+        this.character = res;
+      });
     });
   }
 
