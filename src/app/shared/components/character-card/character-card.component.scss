@@ -13,7 +13,6 @@
   width: 20vw;
   background-color: $neutral-dark-grey;
   border-radius: 10px;
-  cursor: pointer;
 
   &__image {
     display: flex;
@@ -22,15 +21,23 @@
 
     img {
       width: 95%;
+      cursor: pointer;
     }
   }
 
   &__info {
     @include margin(2.5);
+    display: flex;
+    justify-content: space-between;
 
     &__name {
       font-size: 1.5em;
       color: $white;
+    }
+
+    img {
+      width: 2em;
+      cursor: pointer;
     }
   }
 }

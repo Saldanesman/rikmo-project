@@ -7,6 +7,8 @@ import { CharacterModel } from '../../../core/models/character.model';
   styleUrls: ['./character-card.component.scss'],
 })
 export class CharacterCardComponent {
+  favorite: boolean = false;
+
   @Input() character: CharacterModel = {
     id: 0,
     name: '',
@@ -16,4 +18,8 @@ export class CharacterCardComponent {
     created: '',
     status: '',
   };
+
+  toggleFavorite(): void {
+    this.favorite = !this.favorite;
+  }
 }
