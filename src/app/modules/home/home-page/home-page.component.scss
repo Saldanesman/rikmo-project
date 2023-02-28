@@ -1,0 +1,8 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+@import "../../../../styles/base/typography";
+
+.home-wrapper {
+  @include marginTop(25);
+  height: 100vh;
+}
