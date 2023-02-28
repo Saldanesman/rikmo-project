@@ -10,6 +10,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'character-details/:id',
+    loadChildren: () =>
+      import('@modules/characters-details/characters-details.module').then(
+        (m) => m.CharactersDetailsModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: '/characters',
   },

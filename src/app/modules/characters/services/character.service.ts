@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
+import { CharacterModel } from '../../../core/models/character.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,5 +14,9 @@ export class CharacterService {
 
   getCharacters$(): Observable<any> {
     return this.http.get(this.URL);
+  }
+
+  getDetails$(id: number) {
+    return this.http.get<CharacterModel>(`${URL}/${id}`);
   }
 }

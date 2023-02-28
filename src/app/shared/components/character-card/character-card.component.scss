@@ -2,8 +2,14 @@
 @import "../../../../styles/abstracts/mixins";
 @import "../../../../styles/base/typography";
 
+
+.character-link {
+  text-decoration: none;
+}
+
 .character-card {
   @include padding(2.5);
+
   width: 20vw;
   background-color: $neutral-dark-grey;
   border-radius: 10px;
