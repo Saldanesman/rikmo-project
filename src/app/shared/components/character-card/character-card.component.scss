@@ -1,0 +1,30 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+@import "../../../../styles/base/typography";
+
+.character-card {
+  @include padding(2.5);
+  width: 20vw;
+  background-color: $neutral-dark-grey;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      width: 95%;
+    }
+  }
+
+  &__info {
+    @include margin(2.5);
+
+    &__name {
+      font-size: 1.5em;
+      color: $white;
+    }
+  }
+}

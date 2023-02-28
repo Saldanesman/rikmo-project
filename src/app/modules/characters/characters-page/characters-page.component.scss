@@ -1,0 +1,15 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+@import "../../../../styles/base/typography";
+
+.characters-list {
+  @include marginRight(5);
+  @include marginLeft(5);
+  display: inline-flex;
+  justify-content: center;
+
+  &__card {
+    @include marginBottom(10);
+    width: auto;
+  }
+}
